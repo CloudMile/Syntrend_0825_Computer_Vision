@@ -82,3 +82,10 @@ Optional arguments:
 --max_step: Maximum training steps. default: 400
 ```
 
+# Run Tensorboard to see you training
+```shell
+$ cd Syntrend_0825_Computer_Vision-master
+$ tensorboard --logdir=./log/Simple/train
+```
+![](./screenshot/tensorboad.png)
+
