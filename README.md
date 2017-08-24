@@ -29,13 +29,13 @@ For Training:
 
 ```shell
 $ cd ./training
-$ run python main.py --do_training=True
+$ python main.py --do_training=True
 ```
 
 For Predicting:
 ```shell
 $ cd ./training
-$ run python main.py
+$ python main.py
 ```
 
 Optional arguments:
