@@ -1,0 +1,9 @@
+./dataset/predicting/unknown/123_0.png 57 635 166 757
+./dataset/predicting/unknown/123_1.png 71 426 179 554
+./dataset/predicting/unknown/123_2.png 82 195 178 313
+./dataset/predicting/unknown/123_3.png 268 626 387 772
+./dataset/predicting/unknown/123_4.png 276 405 381 532
+./dataset/predicting/unknown/123_5.png 279 185 393 329
+./dataset/predicting/unknown/123_6.png 495 153 611 301
+./dataset/predicting/unknown/123_7.png 498 410 613 547
+./dataset/predicting/unknown/123_8.png 531 615 598 696
