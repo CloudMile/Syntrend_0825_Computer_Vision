@@ -1,5 +1,15 @@
 # Syntrend Computer Vision Workshop
 
+Installing required Python libraries
+
+```shell
+iPython notebook
+TensorFlow 1.0+
+Numpy 
+PIL (Pillow)
+Optional - Scipy 
+Optional - Flask
+```
 
 Getting source code 
 ```shell
