@@ -128,9 +128,9 @@ def crop_faces(rgb, boxes, margin=32, image_size = 200):
 def recognise_faces(crop_images, image_size = 200):
     model_name = 'Simple'
     model_dir = '../log/' + model_name + '/train'
-    results = pred.classify_images(model_name, model_dir, crop_images, image_size, ['Hsia Yu-chiao', 'Sung Yun-hua'])
+    results = pred.classify_images(model_name, model_dir, crop_images, image_size =image_size, labels =['Hsia Yu-chiao', 'Sung Yun-hua'])
     print(results)
-    return results
+    return results[0]
 
 def main(_):
     flask_app.run(host='127.0.0.1', port=8080)
