@@ -15,6 +15,14 @@ $ pip install pillow
 $ pip install opencv-python
 ```
 
+3. check you install the most recent tensorflow version
+
+```shell
+pip list | grep tensorflow
+```
+	- if not 1.3, eoither upgrade or reinstall tensorflow with pip command in previous step
+
+
 Getting source code 
 ```shell
 $ git clone https://github.com/CloudMile/Syntrend_0825_Computer_Vision.git
@@ -25,7 +33,7 @@ $ cd Syntrend_0825_Computer_Vision-master
 Open jupyter 
 ![](./screenshot/open_with_jupyter.png)
 
-Navigate to directory clone/downloaded from previousely step
+Navigate to directory clone/downloaded from previouse step
 ![](./screenshot/navigate_to_downloaded_directory.png)
 
 # Run Training and predicting with commmand line
