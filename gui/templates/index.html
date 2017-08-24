@@ -1,0 +1,309 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- In-line styles -->
+  <style>
+    body {
+      float: left;
+      width: 100%;
+      height: 100%;
+      padding-top: 50px;
+      padding-left: 0px;
+      background-color: #8db6cd;
+    }
+    .starter-template {
+      height: 90%;
+      padding: 20px 15px;
+    }
+    .content_div{
+      width: 48%;
+      height: ;
+      display: inline-block;
+      vertical-align: top;   
+      text-align:center;
+    }
+    .identify_block {
+      width: 48%;
+      height: 100%;
+      display: inline-block;
+      visibility: visible;
+      text-align: center;
+    }
+    .identify_btn {
+      width: 100%
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      display: inline-block;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      -webkit-user-select: none;  
+      -moz-user-select: none;    
+      -ms-user-select: none;      
+      user-select: none;
+      border: 2px solid blue;
+    }
+    .result_div {
+      width: 48%;
+      height: 99%;
+      display: inline-block;
+      vertical-align: top;   
+      text-align:center;
+      margin-left: 1%;
+      display: none;
+    }
+    .thinking_block {
+      width: 48%;
+      height: 99%;
+      display: none;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+    }
+    .preview_div {
+      /*margin: 10px;*/
+      height: calc(100% - 10px);
+      /*background-color: red;*/
+      overflow: hidden;
+    }
+    .title_div {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      display: inline-block;
+    }
+    .identity_div{
+      /*display: none;*/
+      /*visibility: hidden;*/
+    }
+    .vr {
+      display: inline-block;
+      width: 1px;
+      height: 100%;
+      margin: 10px;
+      background-color: #CCCCCC;
+    }
+    .face_block{
+      /*display:none;*/
+      width: 100%;
+      height: 60px;
+      /*background-color: black;*/
+      text-align: left;
+      /*display: none;*/
+    }
+    .face{
+      /*display:none;*/
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      margin-left: 30px;
+    }
+    .accuracy_block {
+      display: inline-block;
+    }
+    .name_block {
+      display: inline-block;
+      margin-left: 30px;
+      width: 50px;
+    }
+    .acc_value {
+      display: inline-block;
+      width: 120px
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand"> Tensorflow workshop</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+    <hr>
+    <div class="starter-template">
+      <div id='content_div', class='content_div'>
+        <div class="preview_div">
+          <!-- <img id="preview" width=auto height=100% src="../unkonwn.jpg"> -->
+          <img id="preview" width=auto height=100% src="{{ url_for('static', filename='unkonwn.jpg') }}">          
+        </div>
+      </div>
+      <div id='identify_block', class='identify_block'>
+        <button type="identify_btn" onclick="previewFile()">Start Identify!</button>
+      </div>
+      <div id='thinking_block', class='thinking_block'>
+        Thinking about it ...
+      </div>
+      <div id="result_div", class='result_div'>
+        <div class='title_div'>
+          Identification result:
+        </div>
+        <hr>
+        <div class='identity_div'>
+          <div class=face_block>
+            <img class=face id="face_0" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_0_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_0_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_1" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_1_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_1_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_2" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_2_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_2_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_3" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_3_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_3_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_4" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_4_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_4_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_5" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_5_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_5_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_6" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_6_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_6_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_7" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_7_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_7_1" > </div>
+            </div>
+          </div>
+          <div class=face_block>
+            <img class=face id="face_8" src="" height=60px width=60px>
+            <div class=accuracy_block>
+              <div class='name_block'> 夏宇喬 </div>
+              <div class="acc_value" id="acc_8_0" > </div>
+              <div class='name_block'> 宋芸樺 </div>
+              <div class="acc_value" id="acc_8_1" > </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function post() {
+      function readURL(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function (e) {
+                  $('#blah').attr('src', e.target.result);
+              }
+
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+      method = "post";
+      var form = document.createElement("form");
+      form.setAttribute("method", method);
+      document.body.appendChild(form);
+      form.submit();
+    }
+    function previewFile() {
+      $("#identify_block").hide()
+      // $("#prediction").hide();
+      $("#thinking_block").css('display', 'inline-block');
+      post()
+    }
+    $(document).ready(function() {
+      var error = {{ error }}
+      var results = {{ results }};
+      if (results == true) {
+        $("#thinking_block").hide();
+        $("#identify_block").hide()
+        $("#result_div").css('display', 'inline-block');
+
+        $("#preview").attr("src", "data:image/png;base64,{{ image_b64 }}");
+        $("#face_0").attr("src", "data:image/png;base64,{{ faces_0 }}");
+        $("#face_1").attr("src", "data:image/png;base64,{{ faces_1 }}");
+        $("#face_2").attr("src", "data:image/png;base64,{{ faces_2 }}");
+        $("#face_3").attr("src", "data:image/png;base64,{{ faces_3 }}");
+        $("#face_4").attr("src", "data:image/png;base64,{{ faces_4 }}");
+        $("#face_5").attr("src", "data:image/png;base64,{{ faces_5 }}");
+        $("#face_6").attr("src", "data:image/png;base64,{{ faces_6 }}");
+        $("#face_7").attr("src", "data:image/png;base64,{{ faces_7 }}");
+        $("#face_8").attr("src", "data:image/png;base64,{{ faces_8 }}");
+        $("#acc_0_0").text({{ score_0_0 }})
+        $("#acc_0_1").text({{ score_0_1 }})
+        $("#acc_1_0").text({{ score_1_0 }})
+        $("#acc_1_1").text({{ score_1_1 }})
+        $("#acc_2_0").text({{ score_2_0 }})
+        $("#acc_2_1").text({{ score_2_1 }})
+        $("#acc_3_0").text({{ score_3_0 }})
+        $("#acc_3_1").text({{ score_3_1 }})
+        $("#acc_4_0").text({{ score_4_0 }})
+        $("#acc_4_1").text({{ score_4_1 }})
+        $("#acc_5_0").text({{ score_5_0 }})
+        $("#acc_5_1").text({{ score_5_1 }})
+        $("#acc_6_0").text({{ score_6_0 }})
+        $("#acc_6_1").text({{ score_6_1 }})
+        $("#acc_7_0").text({{ score_7_0 }})
+        $("#acc_7_1").text({{ score_7_1 }})
+        $("#acc_8_0").text({{ score_8_0 }})
+        $("#acc_8_1").text({{ score_8_1 }})
+        // $("#face_block").show();
+        // $(process({{ faces_0 }})
+      }
+      if (error == true) {
+        $("#error").show();
+      }
+    });
+  </script>
+</body>
+</html>
