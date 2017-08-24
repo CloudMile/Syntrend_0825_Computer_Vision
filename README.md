@@ -5,6 +5,8 @@ Installing required Python libraries
 1. Download and Install Anaconda at https://www.continuum.io/downloads
 	- install with Python 3.x
 
+![](./screenshot/anaconda_installation.png)
+
 2. After install anaconda, run the following commands in terminal or command line
 
 ```shell
@@ -18,16 +20,24 @@ Getting source code
 $ git clone https://github.com/CloudMile/Syntrend_0825_Computer_Vision.git
 $ cd Syntrend_0825_Computer_Vision-master
 ```
+# Run Training and predicting through anaconda 
 
-Run Training and predicting with commmand line
-#For Training:
+Open jupyter 
+![](./screenshot/open_with_jupyter.png)
+
+Navigate to directory clone/downloaded from previousely step
+![](./screenshot/navigate_to_downloaded_directory.png)
+
+# Run Training and predicting with commmand line
+
+For Training:
 
 ```shell
 $ cd ./training
 $ python main.py --do_training=True
 ```
 
-#For Predicting:
+For Predicting:
 ```shell
 $ cd ./training
 $ python main.py
