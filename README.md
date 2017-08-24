@@ -3,12 +3,14 @@
 Installing required Python libraries
 
 1. Download and Install Anaconda at https://www.continuum.io/downloads
+	- install with Python 3.x
 
 2. After install anaconda, run the following commands in terminal or command line
 
 ```shell
 $ pip install tensorflow
 $ pip install pillow
+$ pip install opencv-python
 ```
 
 Getting source code 
@@ -17,14 +19,15 @@ $ git clone https://github.com/CloudMile/Syntrend_0825_Computer_Vision.git
 $ cd Syntrend_0825_Computer_Vision-master
 ```
 
-For Training:
+Run Training and predicting with commmand line
+#For Training:
 
 ```shell
 $ cd ./training
 $ python main.py --do_training=True
 ```
 
-For Predicting:
+#For Predicting:
 ```shell
 $ cd ./training
 $ python main.py
