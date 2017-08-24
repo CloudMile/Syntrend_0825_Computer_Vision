@@ -7,8 +7,8 @@ Installing required Python libraries
 2. After install anaconda, run the following commands in terminal or command line
 
 ```shell
-$ conda install tensorflow
-$ conda install pillow
+$ pip install tensorflow
+$ pip install pillow
 ```
 
 Getting source code 
