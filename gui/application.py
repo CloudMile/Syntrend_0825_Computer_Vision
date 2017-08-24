@@ -38,18 +38,17 @@ def classify_file():
 
     buffer = BytesIO()
     img.save(buffer, format="PNG")
-
     bufferList = []
     for idx, face in enumerate(cropped):
         tmp = Image.fromarray(face)
         buf = BytesIO()
         tmp.save(buf, format="PNG")
-        bufferList.append(base64.b64encode(buf.getvalue()))
+        bufferList.append(base64.b64encode(buf.getvalue()).decode("utf-8"))
 
     return render_template('index.html',
         results = 'true',
         error = 'false',
-        image_b64 = base64.b64encode(buffer.getvalue()),
+        image_b64 = base64.b64encode(buffer.getvalue()).decode("utf-8"),
         # scores = scores,
         faces_0 = bufferList[0],
         faces_1 = bufferList[1],
