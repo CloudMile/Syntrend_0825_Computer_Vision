@@ -1,4 +1,11 @@
-Preparation:
+# Syntrend Computer Vision Workshop
+
+
+Getting source code 
+$ git clone https://github.com/CloudMile/Syntrend_0825_Computer_Vision.git
+$ cd Syntrend_0825_Computer_Vision-master
+
+Getting dataset
 
 1. Create a folder ‘dataset’
 
@@ -6,13 +13,14 @@ Preparation:
 
 3. Place downloaded folders in dataset. e.g.. (./dataset/cropped/predicting)
 
+
 For Training:
-- cd ./training
-- run python main.py --do_training=True
+$ cd ./training
+$ run python main.py --do_training=True
 
 For Predicting:
-- cd ./training
-- run python main.py
+$ cd ./training
+$ run python main.py
 
 Optional arguments:
 
