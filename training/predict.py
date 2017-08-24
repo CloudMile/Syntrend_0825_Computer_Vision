@@ -20,6 +20,7 @@ def classify_images(model_name, model_dir, cropped_images, labels, image_size=20
     results = []
     tf.reset_default_graph()
     with tf.Session() as sess:
+        print(len(cropped_images), image_size)
         t_images = tf.image.resize_image_with_crop_or_pad(cropped_images, image_size, image_size)
         t_images = tf.cast(t_images, tf.float32)
         t_images = tf.map_fn(lambda frame: tf.image.per_image_standardization(frame), t_images)

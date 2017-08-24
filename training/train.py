@@ -40,6 +40,7 @@ def training_placeholder(model_name, labelNames, t_batch_train,
     t_op_loss = model.losses(t_op_logits, t_label_input)
     t_op_acc = model.evaluation(t_op_logits, t_label_input)
     t_op_train = model.training(t_op_loss, learning_rate)
+    
     model.writeSummaries(t_op_acc, t_op_loss, scope='training')
     t_op_summary = tf.summary.merge_all()
     
