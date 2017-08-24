@@ -16,14 +16,6 @@ Getting source code
 $ git clone https://github.com/CloudMile/Syntrend_0825_Computer_Vision.git
 $ cd Syntrend_0825_Computer_Vision-master
 ```
-Getting dataset
-
-1. Create a folder ‘dataset’
-
-2. Download dataset from https://drive.google.com/drive/folders/0ByVbpbF2lPbmVDl1aDZRQUpGOFk
-
-3. Place downloaded folders in dataset. e.g.. (./dataset/cropped/predicting)
-
 
 For Training:
 
