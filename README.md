@@ -36,6 +36,15 @@ Open jupyter
 Navigate to directory clone/downloaded from previouse step
 ![](./screenshot/navigate_to_downloaded_directory.png)
 
+# Run Predicting with Web-UI (After successful training)
+
+```shell
+$ cd Syntrend_0825_Computer_Vision-master/gui
+$ python application.py
+```
+
+![](./screenshot/webUI.png)
+
 # Run Training and predicting with commmand line
 
 For Training:
