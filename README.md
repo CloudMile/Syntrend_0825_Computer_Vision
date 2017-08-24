@@ -2,13 +2,13 @@
 
 Installing required Python libraries
 
+1. Download and Install Anaconda at https://www.continuum.io/downloads
+
+2. After install anaconda, run the following commands in terminal or command line
+
 ```shell
-iPython notebook
-TensorFlow 1.0+
-Numpy 
-PIL (Pillow)
-Optional - Scipy 
-Optional - Flask
+$ conda install tensorflow
+$ conda install pillow
 ```
 
 Getting source code 
