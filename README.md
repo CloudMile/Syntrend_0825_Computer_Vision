@@ -20,7 +20,7 @@ $ pip install opencv-python
 ```shell
 pip list | grep tensorflow
 ```
-	- if not 1.3, eoither upgrade or reinstall tensorflow with pip command in previous step
+	- if not 1.3, either upgrade or reinstall tensorflow with pip command in previous step
 
 
 Getting source code 
